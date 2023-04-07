@@ -8,7 +8,7 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
         return (
           <button
             className={css.button}
-            onClick={() => onLeaveFeedback(option)}
+            onClick={onLeaveFeedback}
             key={option}
             type="button"
           >

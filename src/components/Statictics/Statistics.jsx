@@ -1,13 +1,7 @@
 import PropTypes from 'prop-types';
 import css from './Statictics.module.css';
 
-function Statictics({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) {
+function Statictics({ good, neutral, bad, total, positivePercentage }) {
   return (
     <ul>
       <li className={css.item}>
@@ -27,18 +21,18 @@ function Statictics({
       </li>
       <li className={css.item}>
         <p className={css.text}>
-          Total: <span className={css.value}>{total()}</span>
+          Total: <span className={css.value}>{total}</span>
         </p>
       </li>
       <li className={css.item}>
         <p className={css.text}>
           Positive feedback:
-          <span className={css.value}>{positivePercentage()}</span>
+          <span className={css.value}>{positivePercentage}</span>
         </p>
       </li>
     </ul>
   );
-};
+}
 
 Statictics.propTypes = {
   good: PropTypes.number.isRequired,
@@ -48,4 +42,4 @@ Statictics.propTypes = {
   positivePercentage: PropTypes.func.isRequired,
 };
 
-export default Statictics
+export default Statictics;
