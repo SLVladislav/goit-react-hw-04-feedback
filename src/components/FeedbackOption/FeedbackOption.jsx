@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import css from './FeedbackOption.module.css';
 
-function FeedbackOptions({ options, onLeaveFeedback }) {
+function FeedbackOptions({ options, handleIncrement }) {
   return (
     <div className={css.wrap}>
       {options.map(option => {
         return (
           <button
             className={css.button}
-            onClick={onLeaveFeedback}
+            onClick={() => handleIncrement(option)}
             key={option}
             type="button"
           >
@@ -22,6 +22,6 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
 
 FeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-  onLeaveFeedback: PropTypes.func.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
 };
 export default FeedbackOptions;
